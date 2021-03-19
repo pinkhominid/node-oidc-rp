@@ -1,7 +1,7 @@
 {
   "name": "node-oidc-rp",
   "version": "1.0.0",
-  "description": "An example OpenID Connect Relying Party supporting authorization code flow.",
+  "description": "An example OpenID Connect Relying Party Client supporting authorization code flow and third party initiated login.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"

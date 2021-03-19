@@ -1,7 +1,7 @@
 {
     "development": {
         "baseUrl": "http://localhost:3000",
-        "sessionSecret": "dagnabbit!",
+        "sessionSecret": "D49n4661t!",
         "oauth2": {
             "initiateLoginPath": "/oauth2/login",
             "redirectPath": "/oauth2/callback",

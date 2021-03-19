@@ -1,7 +1,9 @@
 # Roadmap
 
 - catch await errors
-- supports a customLoginPromptUrl for each provider integration
+- handle login_required and consent_required errs from auth
+- customLoginPromptUrl for each provider integration
+- customConsentPromptUrl for each provider integration
 - support relative target_link_uri
 - add PKCE 'pixy'
 - expired session (after idle)

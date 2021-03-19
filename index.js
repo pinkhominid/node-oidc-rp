@@ -1,8 +1,8 @@
 /**
- * Node.js OpenID Connect Relying Party Example
- * Supports Third Party initiated silent authentication requests (SSO) using authorization code flow
- * https://openid.net/specs/openid-connect-core-1_0.html#ThirdPartyInitiatedLogin
+ * An example OpenID Connect Relying Party Client
+ * Supporting authorization code flow and third party initiated login
  * https://developer.okta.com/docs/concepts/auth-overview/#authorization-code-flow
+ * https://openid.net/specs/openid-connect-core-1_0.html#ThirdPartyInitiatedLogin
  */
 const cryptoRandomString = require('crypto-random-string')
 const fetch = require('node-fetch')
@@ -151,7 +151,7 @@ app.post(redirectPath, async (req, res) => {
       res.cookie('sid', sid, sidCookieOptions)
       res.redirect(302, state.targetLinkUrl)
     } else {
-      error = 'Invalid token kid'
+      // error = 'Invalid token kid'
     }
 
   }
@@ -166,12 +166,12 @@ app.post(redirectPath, async (req, res) => {
 })
 
 // TODO: Remove this route, here for demo purposes only
-app.get('/*', (req, res) => res.send(`
-  ${Object.keys(clientInfoByProvider).map(prov => {
+app.get('/*', (req, res) => res.send(
+  Object.keys(clientInfoByProvider).map(prov => {
     const url = `${initiateLoginPath}?iss=${prov}`
     return `<a href=${url}>${url}</a><br>`
-  })}
-`))
+  }).join('')
+))
 
 // STARTUP
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
@@ -184,7 +184,8 @@ async function createLocalSession(email) {
 
 // UTILS
 async function fetchProviderConfig(issuer) {
-  const resp = await fetch(`${issuer}/.well-known/openid-configuration`)
+  const url = toAbsUrl('/.well-known/openid-configuration', issuer)
+  const resp = await fetch(url)
   return await resp.json()
 }
 
