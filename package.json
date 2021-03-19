@@ -1,0 +1,33 @@
+{
+  "name": "node-oidc-rp",
+  "version": "1.0.0",
+  "description": "An example OpenID Connect Relying Party supporting authorization code flow.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": "pinkhominid/node-oidc-rp",
+  "files": [
+    "/index.js"
+  ],
+  "keywords": [
+    "node",
+    "node.js",
+    "oidc",
+    "openid",
+    "connect",
+    "rp",
+    "relying",
+    "party"
+  ],
+  "author": "pinkhominid <pinkhominid@birdbomb.com>",
+  "license": "MIT",
+  "dependencies": {
+    "crypto-random-string": "^3.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "jsonwebtoken": "^8.5.1",
+    "jwk-to-pem": "^2.0.2",
+    "node-fetch": "^2.6.0"
+  }
+}

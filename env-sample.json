@@ -1,0 +1,17 @@
+{
+    "development": {
+        "baseUrl": "http://localhost:3000",
+        "sessionSecret": "dagnabbit!",
+        "oauth2": {
+            "initiateLoginPath": "/oauth2/login",
+            "redirectPath": "/oauth2/callback",
+            "defaultTargetLinkUrl": "/",
+            "clientInfoByProvider": {
+                "https://my-oidc-provider.com": {
+                    "clientId": "my-client-id",
+                    "clientSecret": "my-client-secret"
+                }
+            }
+        }
+    }
+}
